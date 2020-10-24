@@ -1,0 +1,7 @@
+{
+  "name": "ocm",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

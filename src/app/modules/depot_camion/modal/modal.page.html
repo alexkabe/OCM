@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-item lines="none" color="primary">
+      Article 
+      <ion-button fill="clear" slot="end" (click)="dismiss()">
+        <ion-icon name="trash"  color="danger"></ion-icon>
+      </ion-button>
+    </ion-item>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+      <ion-item>
+          <ion-label>{{article.libelle}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <p>Stock</p>
+          {{article.quantite}}</ion-label>  
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <p>Prix</p>
+          {{article.prix}}</ion-label>  
+      </ion-item>
+
+      <ion-item>
+      <ion-label position="stacked">Quantite</ion-label> 
+        <ion-input type="number" name="quantite" id="quantite" ngModel required></ion-input>  
+      </ion-item>
+      <br>
+
+      <div>
+        <ion-button shape="round" [disabled]="f.invalid" type="submit" expand="block" color="primary">Enregistrer</ion-button>
+      </div>
+    </form>
+</ion-content>

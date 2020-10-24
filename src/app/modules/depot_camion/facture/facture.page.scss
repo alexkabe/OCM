@@ -1,0 +1,104 @@
+ion-title
+{
+    text-align: center;
+}
+
+
+
+ion-button
+{
+    font-size: 1em;
+}
+.toolbar
+{
+    width: 100%;
+    height: 50px;
+    border-radius: 0%;
+    padding-top: 3%;
+    border: none;
+    color: white;
+    margin: 0px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    background-color: rgb(114, 110, 106);
+    ion-button
+    {
+        float: right;
+        margin-top: -2%;
+    }
+    ion-label
+    {
+        margin-left: 10%;
+        margin-top: 10%;
+        color: white;
+    }
+
+}
+.detail
+{
+    width: 100%;
+    height: 50px;
+    border-radius: 0%;
+    border: none;
+    color: white;
+    margin: 5% 0 5% 0;
+    padding-left: 2%;
+    background-color: rgba(114, 110, 106, 0.795);
+    padding-top: 3%;
+    
+    .label1
+    {
+        margin-left: 10px;
+        font-size: 1.3em;
+    }
+    .label2
+    {        
+        font-size: 1.2em;
+        margin-left: 127px;
+    }
+
+    .label3
+    {
+        font-weight: bold;
+        margin-left: 10px;
+        font-size: 1.3em;
+    }
+    .label4
+    {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-left: 123px;
+    }
+    .label5
+    {
+        font-size: 1.2em;
+        margin-left: 153px;
+    }
+    .label6
+    {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-left: 148px;
+    }
+    .label7
+    {        
+        font-size: 1.2em;
+        margin-left: 132px;
+    }
+    ion-icon
+    {
+        margin-right: 35px;
+        font-size: 1.5em;
+        float: right;
+    }
+}
+
+span{
+    background-color: rgb(216, 214, 214);
+}
+
+.fact
+{
+    margin-left: 17px;
+    margin-bottom: -15px;
+}

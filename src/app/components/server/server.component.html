@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-button slot="start" fill="clear" (click)="dismiss()" color="light" routerDirection="forward" >
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">Connexion au serveur</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="medium">
+  <div class="box ion-text-center">
+       Selectionner votre serveur de connexion
+       <ion-text color="danger">
+       <p> <u>NB :</u> Veuillez vous rapprocher de votre administrateur pour cette configuration</p>
+      </ion-text>
+  </div>
+  <form>
+ 
+      <ion-radio-group>
+    
+        <ion-card>
+          <ion-item>
+            <ion-label>SERVEUR 1</ion-label>
+            <ion-radio value="https://eh2s-app.com/ocm/grossiste/" color="success"></ion-radio>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label>SERVEUR 2</ion-label>
+            <ion-radio value="https://eh2s-app.com/ocm/dovv/" color="success"></ion-radio>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label>SERVEUR FORMATION</ion-label>
+            <ion-radio value="https://eh2s-app.com/ocm/formation/" color="tertiary"></ion-radio>
+          </ion-item>
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label>SERVEUR TEST</ion-label>
+            <ion-radio value="http://192.168.1.100:8080/ocm/" color="tertiary"></ion-radio>
+          </ion-item>
+        </ion-card>
+ 
+      </ion-radio-group>
+    <ion-button shape="round" strong="true" size="small" (click)="changeServer()"  expand="block" color="primary">Connexion Server</ion-button>
+  </form>
+</ion-content>

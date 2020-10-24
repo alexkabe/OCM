@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-item color="primary">
+      <ion-searchbar></ion-searchbar>
+      <ion-button fill="clear" color="light" routerLink="/depot/camion">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let article of articles" (click)="retourner(article); dismiss()">
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>        
+          {{article.code}}
+          <p>{{article.libelle}}</p>
+        </ion-label>
+        <ion-label slot="end">
+         {{article.quantite}}
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>

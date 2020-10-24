@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-item color="primary" lines="none">
+      <ion-button fill="clear" (click)="onClose()">
+        <ion-icon color="light" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-title>
+        FACTURE
+      </ion-title>
+      <ion-button fill="clear" (click)="refrech()">
+        <ion-icon color="light" name="refresh"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="save($event)">
+        <ion-icon color="light" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card class="toolbar">
+    <ion-label>
+      23-03-2020
+    </ion-label>
+
+      <ion-button fill="clear">
+        Livraison
+      </ion-button>
+</ion-card>
+
+<ion-content >
+  <ion-label class="fact">
+    Facture à:
+  </ion-label>
+
+  <ion-item *ngIf="numtest !== 0" (click)="openClient()" >
+      {{client.nom}} {{client.prenom}}
+  </ion-item>
+
+  <ion-item *ngIf="numtest === 0">
+    <span fill="clear"  (click)="openClient()" >
+        <ion-icon name="add-circle-outline" slot="start" ></ion-icon>Ajouter un client
+    </span>
+  </ion-item>
+
+  <ion-item>
+      <span fill="clear" (click)="openArticle()">
+        <ion-icon name="add-circle-outline" slot="start" ></ion-icon>Ajouter un article
+      </span>
+  </ion-item>
+
+    <div class="tirage" *ngFor="let vente of articleChoisi; let i=index">
+      <ion-card text="wrap" (click)="onSelect()">
+        <ion-item lines="none">
+          <ion-label slot="start">{{vente.code}}
+            <p slot="start">{{vente.libelle}}</p>
+          </ion-label>
+          <ion-label >
+            <p> {{vente.quantite}} * {{vente.prix}}</p>
+            {{vente.prix * vente.quantite}}
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </div>
+    
+  <ion-item lines="none">
+      <ion-label>Total HT </ion-label>
+      <ion-label slot="end">{{total}}</ion-label>
+  </ion-item>
+
+  <div *ngIf="detail === 0">
+    <ion-card class="detail" color="light" lines="none" (click)="onDetail(1)">
+          <ion-label class="label1">Total Taxe</ion-label>
+          <ion-label class="label2">{{ttt}}</ion-label>
+          <ion-icon name="arrow-forward"></ion-icon>
+    </ion-card>
+  </div>
+  <div *ngIf="detail === 1">
+    <ion-card class="detail" color="light" lines="none" (click)="onDetail(0)">
+      <ion-label class="label3">Total Taxe</ion-label>
+      <ion-label class="label4">{{total}}</ion-label>
+      <ion-icon name="arrow-down"></ion-icon>
+    </ion-card>
+
+    <ion-item lines="none">
+      <ion-label>TVA(19.25%) </ion-label>
+      <ion-label slot="end">{{tva}}</ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>PSA()</ion-label>
+      <ion-label slot="end">{{psa}}</ion-label>
+    </ion-item>
+  
+  
+    <ion-item>
+      <ion-label>Totale Taxe </ion-label>
+      <ion-label slot="end">{{ttt}}</ion-label>
+    </ion-item>
+  
+  </div>
+
+  <div *ngIf="detail2 === 0">
+    <ion-card class="detail" color="light" lines="none" (click)="onDetail2(1)">
+          <ion-label class="label1">Details</ion-label>
+          <ion-label class="label5">{{total}}</ion-label>
+          <ion-icon name="arrow-forward"></ion-icon>
+    </ion-card>
+  </div>
+
+  <div *ngIf="detail2 === 1">
+    <ion-card class="detail" color="light" lines="none" (click)="onDetail2(0)">
+      <ion-label class="label3">Details</ion-label>
+      <ion-label class="label6">{{total}}</ion-label>
+      <ion-icon name="arrow-down"></ion-icon>
+    </ion-card>
+
+    <ion-item lines="none">
+      <ion-label>Transport </ion-label>
+      <ion-label slot="end">{{tva}}</ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Remise</ion-label>
+      <ion-label slot="end">{{psa}}</ion-label>
+    </ion-item>
+  
+  
+    <ion-item>
+      <ion-label>Totale Casier </ion-label>
+      <ion-label slot="end">{{ttt}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ristourne </ion-label>
+      <ion-label slot="end">{{ttt}}</ion-label>
+    </ion-item>
+  
+  </div>
+  
+  <div>
+    <ion-card class="detail" color="light" lines="none">
+          <ion-label class="label1">Solde Dù</ion-label>
+          <ion-label class="label7">{{solde}}</ion-label>
+    </ion-card>
+  </div>

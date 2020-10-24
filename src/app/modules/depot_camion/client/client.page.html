@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-item color="primary">
+      <ion-searchbar></ion-searchbar>
+      <ion-button fill="clear" color="light" routerLink="/depot/camion">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let client of clients" (click)="return(client)">
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>        
+          {{client.nom}} {{client.prenom}}
+        </ion-label>
+        <ion-label class="label" slot="end">
+         {{client.psa}}
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>
